@@ -1,9 +1,10 @@
 mod debug;
 mod tables;
+mod io;
+mod board;
+
+
 fn main() {
-    for i in (0..64).rev() {
-        println!("{i}");
-        debug::print_bb(tables::PAWN_BLACK_ATTACK[i]);
-        println!("");
-    }
+    let fen = String::from("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+    board::Board::fen(fen);
 }
